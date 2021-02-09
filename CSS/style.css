@@ -1,0 +1,53 @@
+body {
+    background-color: rgb(157, 159, 160);
+}
+
+h1,
+li {
+    display: inline;
+    margin-right: 10px;
+}
+
+body header li a {
+    text-decoration: none;
+}
+
+body header h1 img {
+    width: 60px;
+    height: 50px;
+}
+
+table {
+    border: 5px solid black;
+    border-collapse: collapse;
+}
+
+table tr td {
+    border: 3px solid red;
+}
+
+footer {
+    text-align: center;
+    background-color: blue;
+    color: white;
+}
+
+.para1 {
+    color: white;
+    background-color: brown;
+}
+
+.para2 {
+    color: white;
+    background-color: brown;
+}
+
+.para3 {
+    color: white;
+    background-color: brown;
+}
+
+.para4 {
+    color: white;
+    background-color: brown;
+}
