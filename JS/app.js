@@ -121,27 +121,27 @@ document.getElementById("score").innerHTML = questionNumSix();
 let flag = false;
 //let gauss = ['iphone', 'samsung', 'huawei', 'vivo'];
 function questionNumSeven(){
-  for (let z = 0; z < 6; z++) {
+  for (let z = 0; z < 6; z++){
     let answerer4 = prompt('Question 7: ' + questions[1]);
     for (let r=0;r<possibleResponses.length;r++) {
       if (answerer4.toLowerCase() === possibleResponses[r]) {
-        for (let c=0;r<correctResponses.length;c++){
+        for (let c=0;c<correctResponses.length;c++){//bugs was here
           if (answerer4.toLowerCase() === correctResponses[c]){
             alert('Correct');
             flag = true;
             correctAnswers++;
             break;
           }
-        }
 
+        }
       }else {
         alert('Please enter values from the list only ( ' + possibleResponses + ' )');
 
+      }
     }
-}
-if (flag) {
-  break;
-}
+    if (flag) {
+      break;
+    }
   }
   return correctAnswers;
 }
