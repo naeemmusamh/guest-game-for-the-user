@@ -9,8 +9,8 @@ let correctResponses = ['iphone', 'vivo'];
 
 let correctAnswers = 0;
 //Q1
-let inputUniv = prompt('you studied in Yarmouk university or not??');
-if (inputUniv.toLowerCase() === 'yes' || inputUniv.toLowerCase() === 'Y') {
+let inputUniv = prompt('Question 1: ' + 'you studied in Yarmouk university or not??');
+if (inputUniv.toLowerCase() === 'yes' || inputUniv.toLowerCase() === 'y') {
     alert('yeahhh me too');
     correctAnswers++;
 } else if (inputUniv.toLowerCase() === 'no' || inputUniv.toLowerCase() === 'n') {
@@ -20,7 +20,7 @@ if (inputUniv.toLowerCase() === 'yes' || inputUniv.toLowerCase() === 'Y') {
 }
 document.getElementById("score").innerHTML = correctAnswers;
 //Q2
-let inputFriend = prompt('you have a good time in university or not???');
+let inputFriend = prompt('Question 2: ' + 'you have a good time in university or not???');
 if (inputFriend.toLowerCase() === 'yes' || inputFriend.toLowerCase() === 'y') {
     alert('yeahhh me too');
     correctAnswers++;
@@ -32,7 +32,7 @@ if (inputFriend.toLowerCase() === 'yes' || inputFriend.toLowerCase() === 'y') {
 document.getElementById("score").innerHTML = correctAnswers;
 
 //Q3
-let inputWork = prompt('have you work for any company in irbid???');
+let inputWork = prompt('Question 3: ' + 'have you work for any company in irbid???');
 if (inputWork.toLowerCase() === 'yes' || inputWork.toLowerCase() === 'y') {
     alert('yeahhh me too');
     correctAnswers++;
@@ -44,7 +44,7 @@ if (inputWork.toLowerCase() === 'yes' || inputWork.toLowerCase() === 'y') {
 document.getElementById("score").innerHTML = correctAnswers;
 
 //Q4
-let inputYear = prompt('have you work for more than 5 year in comapy???');
+let inputYear = prompt('Question 4: ' + 'have you work for more than 5 year in comapy???');
 if (inputYear.toLowerCase() === 'yes' || inputYear.toLowerCase() === 'y') {
     alert('yeahhh me too');
     correctAnswers++;
@@ -56,7 +56,7 @@ if (inputYear.toLowerCase() === 'yes' || inputYear.toLowerCase() === 'y') {
 document.getElementById("score").innerHTML = correctAnswers;
 
 //Q5
-let inputWere = prompt('have you been visit LTUC???');
+let inputWere = prompt('Question 5: ' + 'have you been visit LTUC???');
 if (inputWere.toLowerCase() === 'yes' || inputWere.toLowerCase() === 'y') {
     alert('yeahhh me too');
     correctAnswers++;
@@ -66,9 +66,9 @@ if (inputWere.toLowerCase() === 'yes' || inputWere.toLowerCase() === 'y') {
     alert('any way welcome');
 }
 document.getElementById("score").innerHTML = correctAnswers;
-
+//Q6
 for (let i = 0; i < 4; i++) {
-    let answerer1 = prompt('What do you expect how old I am?');
+    let answerer1 = prompt('Question 6: ' + 'What do you expect how old I am?');
     if (answerer1.toLowerCase() === '28') {
         alert('correct');
         correctAnswers++;
@@ -82,9 +82,9 @@ document.getElementById("score").innerHTML = correctAnswers;
 alert('the correct answer is a 28 year');
 
 
-
+// Q7
 for (let x = 0; x < 6; x++) {
-    let answerer2 = prompt('What do you expect that I would like to eat, be aware that I am Jordanian?');
+    let answerer2 = prompt('Question 7: ' + 'What do you expect that I would like to eat, be aware that I am Jordanian?');
     if (answerer2.toLowerCase() === 'mansf') {
         alert('correct');
         correctAnswers++;
@@ -95,10 +95,10 @@ for (let x = 0; x < 6; x++) {
 }
 document.getElementById("score").innerHTML = correctAnswers;
 alert('the correct answer is a mansf');
-//Q6
-function questionNumSix(){
+//Q8
+function questionNumSix() {
     for (let i = 0; i < 4; i++) {
-        let answerer3 = prompt('Question 6: ' + questions[0]);
+        let answerer3 = prompt('Question 8: ' + questions[0]);
         if (parseInt(answerer3) === 9) {
             alert('correct answer');
             correctAnswers++;
@@ -110,43 +110,40 @@ function questionNumSix(){
         }
     }
     alert('the correct answer is 9');
-return correctAnswers;
+    return correctAnswers;
 }
 document.getElementById("score").innerHTML = questionNumSix();
 
 
 
+//Q9
+// let gauss = ['iphone', 'samsung', 'huawei', 'vivo'];
 
-//Q7
-let flag = false;
-//let gauss = ['iphone', 'samsung', 'huawei', 'vivo'];
-function questionNumSeven(){
-  for (let z = 0; z < 6; z++){
-    let answerer4 = prompt('Question 7: ' + questions[1]);
-    for (let r=0;r<possibleResponses.length;r++) {
-      if (answerer4.toLowerCase() === possibleResponses[r]) {
-        for (let c=0;c<correctResponses.length;c++){//bugs was here
-          if (answerer4.toLowerCase() === correctResponses[c]){
-            alert('Correct');
-            flag = true;
-            correctAnswers++;
-            break;
-          }
-
+function questionNumSeven() {
+    let flag = false;
+    let answer;
+    for (let i = 0; i < 6; i++) {
+        answer = prompt('Question 9: ' + questions[1]);
+        for (let k = 0; k < possibleResponses.length; k++) {
+            if (answer === possibleResponses[k]) {
+                if (answer === correctResponses[0] || answer === correctResponses[1]) {
+                    flag = true
+                    correctAnswers++;
+                    alert('correct')
+                        //console.log(flag)
+                    break
+                } else {
+                    alert('possible but not correct')
+                    answer = prompt("what is my phone");
+                }
+            }
         }
-      }else {
-        alert('Please enter values from the list only ( ' + possibleResponses + ' )');
-
-      }
+        if (flag)
+            break
     }
-    if (flag) {
-      break;
-    }
-  }
-  return correctAnswers;
+    return correctAnswers;
 }
-    
 document.getElementById("score").innerHTML = questionNumSeven();
-alert('the correct answer is: ' + correctResponses);
+alert(`the correct answer is: ${correctResponses}`);
 
-alert(`welcome in my page ${inputUser} a gain`);
+alert(`welcome in my page ${inputUser}` + 'a gain');
